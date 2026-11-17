@@ -46,13 +46,13 @@ export default function Welcome({ auth }) {
         <>
             <Head title="Invoice Management" />
 
-            <div className="min-h-screen bg-white">
+            <div className="min-h-screen bg-gray-50 dark:bg-gray-950">
                 {/* Nav */}
-                <nav className="border-b border-gray-100">
+                <nav className="border-b border-gray-200 dark:border-gray-800">
                     <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-5">
                         <div className="flex items-center gap-2">
-                            <FileTextIcon className="h-6 w-6 text-indigo-600" />
-                            <span className="text-lg font-semibold text-gray-900 tracking-tight">
+                            <FileTextIcon className="h-6 w-6 text-indigo-600 dark:text-indigo-400" />
+                            <span className="text-lg font-semibold text-gray-800 dark:text-gray-100 tracking-tight">
                                 Invoicely
                             </span>
                         </div>
@@ -60,7 +60,7 @@ export default function Welcome({ auth }) {
                             {auth.user ? (
                                 <Link
                                     href={route('dashboard')}
-                                    className="rounded-md bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-700 transition-colors"
+                                    className="rounded-md bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 transition-colors"
                                 >
                                     Dashboard
                                 </Link>
@@ -68,13 +68,13 @@ export default function Welcome({ auth }) {
                                 <>
                                     <Link
                                         href={route('login')}
-                                        className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors"
+                                        className="text-sm font-medium text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200 transition-colors"
                                     >
                                         Sign in
                                     </Link>
                                     <Link
                                         href={route('register')}
-                                        className="rounded-md bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-700 transition-colors"
+                                        className="rounded-md bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 transition-colors"
                                     >
                                         Get started
                                     </Link>
@@ -87,10 +87,10 @@ export default function Welcome({ auth }) {
                 {/* Hero */}
                 <section className="mx-auto max-w-5xl px-6 pt-20 pb-16">
                     <div className="max-w-2xl">
-                        <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
+                        <h1 className="text-4xl font-bold tracking-tight text-gray-800 dark:text-gray-100 sm:text-5xl">
                             Invoicing that stays out of your way.
                         </h1>
-                        <p className="mt-5 text-lg leading-relaxed text-gray-500">
+                        <p className="mt-5 text-lg leading-relaxed text-gray-500 dark:text-gray-400">
                             Create invoices, track payments, and download PDFs.
                             Built for freelancers and small teams who need something
                             simple that works.
@@ -99,7 +99,7 @@ export default function Welcome({ auth }) {
                             {auth.user ? (
                                 <Link
                                     href={route('dashboard')}
-                                    className="rounded-md bg-indigo-600 px-5 py-2.5 text-sm font-medium text-white hover:bg-indigo-700 transition-colors"
+                                    className="rounded-md bg-indigo-600 px-5 py-2.5 text-sm font-medium text-white hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 transition-colors"
                                 >
                                     Go to dashboard
                                 </Link>
@@ -107,13 +107,13 @@ export default function Welcome({ auth }) {
                                 <>
                                     <Link
                                         href={route('register')}
-                                        className="rounded-md bg-indigo-600 px-5 py-2.5 text-sm font-medium text-white hover:bg-indigo-700 transition-colors"
+                                        className="rounded-md bg-indigo-600 px-5 py-2.5 text-sm font-medium text-white hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 transition-colors"
                                     >
                                         Create free account
                                     </Link>
                                     <Link
                                         href={route('login')}
-                                        className="rounded-md border border-gray-300 px-5 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors"
+                                        className="rounded-md border border-gray-300 dark:border-gray-700 px-5 py-2.5 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
                                     >
                                         Sign in
                                     </Link>
@@ -125,59 +125,59 @@ export default function Welcome({ auth }) {
 
                 {/* Divider */}
                 <div className="mx-auto max-w-5xl px-6">
-                    <hr className="border-gray-100" />
+                    <hr className="border-gray-200 dark:border-gray-800" />
                 </div>
 
                 {/* Features */}
                 <section className="mx-auto max-w-5xl px-6 py-16">
                     <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
                         <div>
-                            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-50">
-                                <FileTextIcon className="h-5 w-5 text-indigo-600" />
+                            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-50 dark:bg-indigo-950">
+                                <FileTextIcon className="h-5 w-5 text-indigo-600 dark:text-indigo-400" />
                             </div>
-                            <h3 className="mt-4 text-sm font-semibold text-gray-900">
+                            <h3 className="mt-4 text-sm font-semibold text-gray-800 dark:text-gray-200">
                                 Draft, send, get paid
                             </h3>
-                            <p className="mt-2 text-sm leading-relaxed text-gray-500">
+                            <p className="mt-2 text-sm leading-relaxed text-gray-500 dark:text-gray-400">
                                 Invoices move through a clear status workflow.
                                 You always know what's outstanding and what's settled.
                             </p>
                         </div>
 
                         <div>
-                            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-50">
-                                <DownloadIcon className="h-5 w-5 text-indigo-600" />
+                            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-50 dark:bg-indigo-950">
+                                <DownloadIcon className="h-5 w-5 text-indigo-600 dark:text-indigo-400" />
                             </div>
-                            <h3 className="mt-4 text-sm font-semibold text-gray-900">
+                            <h3 className="mt-4 text-sm font-semibold text-gray-800 dark:text-gray-200">
                                 PDF export
                             </h3>
-                            <p className="mt-2 text-sm leading-relaxed text-gray-500">
+                            <p className="mt-2 text-sm leading-relaxed text-gray-500 dark:text-gray-400">
                                 Download any invoice as a clean PDF.
                                 Send it by email or attach it to your records.
                             </p>
                         </div>
 
                         <div>
-                            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-50">
-                                <LayersIcon className="h-5 w-5 text-indigo-600" />
+                            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-50 dark:bg-indigo-950">
+                                <LayersIcon className="h-5 w-5 text-indigo-600 dark:text-indigo-400" />
                             </div>
-                            <h3 className="mt-4 text-sm font-semibold text-gray-900">
+                            <h3 className="mt-4 text-sm font-semibold text-gray-800 dark:text-gray-200">
                                 Line items and tax
                             </h3>
-                            <p className="mt-2 text-sm leading-relaxed text-gray-500">
+                            <p className="mt-2 text-sm leading-relaxed text-gray-500 dark:text-gray-400">
                                 Add as many line items as you need.
                                 Tax is calculated automatically from the rate you set.
                             </p>
                         </div>
 
                         <div>
-                            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-50">
-                                <ShieldIcon className="h-5 w-5 text-indigo-600" />
+                            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-50 dark:bg-indigo-950">
+                                <ShieldIcon className="h-5 w-5 text-indigo-600 dark:text-indigo-400" />
                             </div>
-                            <h3 className="mt-4 text-sm font-semibold text-gray-900">
+                            <h3 className="mt-4 text-sm font-semibold text-gray-800 dark:text-gray-200">
                                 Your data, your account
                             </h3>
-                            <p className="mt-2 text-sm leading-relaxed text-gray-500">
+                            <p className="mt-2 text-sm leading-relaxed text-gray-500 dark:text-gray-400">
                                 Every invoice is scoped to its owner.
                                 Nobody else can view, edit, or download it.
                             </p>
@@ -187,16 +187,16 @@ export default function Welcome({ auth }) {
 
                 {/* Divider */}
                 <div className="mx-auto max-w-5xl px-6">
-                    <hr className="border-gray-100" />
+                    <hr className="border-gray-200 dark:border-gray-800" />
                 </div>
 
                 {/* CTA */}
                 <section className="mx-auto max-w-5xl px-6 py-16">
-                    <div className="rounded-lg border border-gray-100 bg-gray-50 p-8 sm:p-10 text-center">
-                        <h2 className="text-lg font-semibold text-gray-900">
+                    <div className="rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-8 sm:p-10 text-center">
+                        <h2 className="text-lg font-semibold text-gray-800 dark:text-gray-100">
                             Stop chasing payments in spreadsheets.
                         </h2>
-                        <p className="mt-3 mx-auto max-w-lg text-sm leading-relaxed text-gray-500">
+                        <p className="mt-3 mx-auto max-w-lg text-sm leading-relaxed text-gray-500 dark:text-gray-400">
                             Set up your account in under a minute. Create your first
                             invoice today and know exactly where your money stands.
                         </p>
@@ -204,7 +204,7 @@ export default function Welcome({ auth }) {
                             <div className="mt-6">
                                 <Link
                                     href={route('register')}
-                                    className="inline-block rounded-md bg-indigo-600 px-5 py-2.5 text-sm font-medium text-white hover:bg-indigo-700 transition-colors"
+                                    className="inline-block rounded-md bg-indigo-600 px-5 py-2.5 text-sm font-medium text-white hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 transition-colors"
                                 >
                                     Get started for free
                                 </Link>
@@ -214,8 +214,8 @@ export default function Welcome({ auth }) {
                 </section>
 
                 {/* Footer */}
-                <footer className="border-t border-gray-100">
-                    <div className="mx-auto max-w-5xl px-6 py-8 text-center text-sm text-gray-400">
+                <footer className="border-t border-gray-200 dark:border-gray-800">
+                    <div className="mx-auto max-w-5xl px-6 py-8 text-center text-sm text-gray-400 dark:text-gray-500">
                         Invoicely
                     </div>
                 </footer>
