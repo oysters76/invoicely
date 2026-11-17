@@ -15,9 +15,13 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->web(append: [
             \App\Http\Middleware\HandleInertiaRequests::class,
             \Illuminate\Http\Middleware\AddLinkHeadersForPreloadedAssets::class,
+            \App\Http\Middleware\SecureHeaders::class,
+            \App\Http\Middleware\LogSuspiciousAccess::class,
         ]);
 
-        //
+        $middleware->alias([
+            'invoice.owner' => \App\Http\Middleware\EnsureInvoiceOwner::class,
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         $exceptions->shouldRenderJsonWhen(
