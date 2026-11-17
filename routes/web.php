@@ -29,6 +29,8 @@ Route::middleware('auth')->group(function () {
         ->name('invoices.mark-paid');
     Route::patch('/invoices/{invoice}/send', [InvoiceController::class, 'send'])
         ->name('invoices.send');
+    Route::get('/invoices/{invoice}/download', [InvoiceController::class, 'download'])
+        ->name('invoices.download');
 });
 
 require __DIR__.'/auth.php';

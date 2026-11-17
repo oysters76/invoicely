@@ -54,6 +54,12 @@ export default function Show({ invoice }) {
                         </span>
                     </div>
                     <div className="flex gap-2">
+                        <a
+                            href={route('invoices.download', invoice.id)}
+                            className="inline-flex items-center rounded-md bg-gray-600 px-4 py-2 text-sm font-medium text-white hover:bg-gray-700"
+                        >
+                            Download PDF
+                        </a>
                         {invoice.status?.value === 'draft' && (
                             <>
                                 <button

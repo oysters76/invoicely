@@ -9,6 +9,7 @@ use App\Actions\DeleteInvoiceAction;
 use App\Actions\MarkAsPaidAction;
 use App\Actions\UpdateInvoiceAction;
 use App\Contracts\InvoiceRepositoryInterface;
+use App\Contracts\PdfGeneratorInterface;
 use App\DTOs\CreateInvoiceDTO;
 use App\DTOs\UpdateInvoiceDTO;
 use App\Enums\InvoiceStatus;
@@ -133,5 +134,20 @@ final class InvoiceController extends Controller
         return redirect()
             ->route('invoices.show', $invoice)
             ->with('success', 'Invoice sent successfully.');
+    }
+
+    public function download(
+        Invoice $invoice,
+        PdfGeneratorInterface $generator,
+    ): \Illuminate\Http\Response {
+        $this->authorize('view', $invoice);
+
+        $pdf = $generator->generate($invoice);
+        $filename = "{$invoice->invoice_number}.pdf";
+
+        return response($pdf, 200, [
+            'Content-Type' => 'application/pdf',
+            'Content-Disposition' => "attachment; filename=\"{$filename}\"",
+        ]);
     }
 }
