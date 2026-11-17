@@ -50,6 +50,22 @@ services:
     networks:
       - invoice_network
 
+  worker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: invoice_worker
+    restart: unless-stopped
+    working_dir: /var/www
+    volumes:
+      - .:/var/www
+    command: php artisan queue:work --sleep=3 --tries=3 --max-time=3600
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - invoice_network
+
   nginx:
     image: nginx:alpine
     container_name: invoice_nginx
