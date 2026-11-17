@@ -49,7 +49,7 @@ export default function Welcome({ auth }) {
                                 {dark ? <SunIcon className="h-5 w-5" /> : <MoonIcon className="h-5 w-5" />}
                             </button>
                             <a
-                                href="https://github.com"
+                                href="https://github.com/oysters76/invoicely"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
