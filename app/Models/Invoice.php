@@ -33,6 +33,7 @@ class Invoice extends Model
         'notes',
         'issued_at',
         'paid_at',
+        'cancelled_at',
     ];
 
     protected $casts = [
@@ -40,6 +41,7 @@ class Invoice extends Model
         'due_date' => 'date',
         'issued_at' => 'datetime',
         'paid_at' => 'datetime',
+        'cancelled_at' => 'datetime',
         'tax_rate' => 'decimal:2',
     ];
 

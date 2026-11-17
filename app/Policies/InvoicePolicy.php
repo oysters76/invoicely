@@ -48,4 +48,10 @@ final class InvoicePolicy
         return $user->id === $invoice->user_id
             && $invoice->status->canTransitionTo(InvoiceStatus::Sent);
     }
+
+    public function cancel(User $user, Invoice $invoice): bool
+    {
+        return $user->id === $invoice->user_id
+            && $invoice->status->canTransitionTo(InvoiceStatus::Cancelled);
+    }
 }

@@ -106,6 +106,10 @@ final class InvoiceService implements InvoiceServiceInterface
             $data['paid_at'] = now();
         }
 
+        if ($newStatus === InvoiceStatus::Cancelled) {
+            $data['cancelled_at'] = now();
+        }
+
         return $this->repository->update($invoice, $data);
     }
 
