@@ -88,19 +88,22 @@ export default function Index({ invoices, stats, filters, statuses }) {
                         >
                             All
                         </button>
-                        {statuses.map((status) => (
-                            <button
-                                key={status.value}
-                                onClick={() => handleFilter(status.value)}
-                                className={`rounded-full px-4 py-1 text-sm font-medium ${
-                                    filters.status === status.value
-                                        ? 'bg-indigo-600 text-white'
-                                        : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                                }`}
-                            >
-                                {status.value.charAt(0).toUpperCase() + status.value.slice(1)}
-                            </button>
-                        ))}
+                        {statuses.map((status) => {
+                            const value = typeof status === 'string' ? status : status.value;
+                            return (
+                                <button
+                                    key={value}
+                                    onClick={() => handleFilter(value)}
+                                    className={`rounded-full px-4 py-1 text-sm font-medium ${
+                                        filters.status === value
+                                            ? 'bg-indigo-600 text-white'
+                                            : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                                    }`}
+                                >
+                                    {value.charAt(0).toUpperCase() + value.slice(1)}
+                                </button>
+                            );
+                        })}
                     </div>
 
                     {/* Table */}
