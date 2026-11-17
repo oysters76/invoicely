@@ -1,3 +1,5 @@
+<?php 
+
 declare(strict_types=1);
 
 namespace App\Enums; 
@@ -24,7 +26,7 @@ enum InvoiceStatus: string
  {
     return match($this) {
       self::Draft => 'Draft', 
-      self::Send => 'Sent', 
+      self::Sent => 'Sent', 
       self::Paid => 'Paid', 
       self::Overdue => 'Overdue', 
       self::Cancelled => 'Cancelled', 

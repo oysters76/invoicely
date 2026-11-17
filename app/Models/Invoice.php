@@ -44,6 +44,14 @@ class Invoice extends Model
 
     protected $with = ['items'];
 
+    protected $appends = [
+        'formatted_total',
+        'formatted_subtotal',
+        'formatted_tax_amount',
+        'formatted_date',
+        'status_badge',
+    ];
+
     // ── Model Event: auto-generate invoice number ──
 
     protected static function booted(): void
