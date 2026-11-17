@@ -190,35 +190,26 @@ export default function Welcome({ auth }) {
                     <hr className="border-gray-100" />
                 </div>
 
-                {/* Architecture callout */}
+                {/* CTA */}
                 <section className="mx-auto max-w-5xl px-6 py-16">
-                    <div className="rounded-lg border border-gray-100 bg-gray-50 p-8 sm:p-10">
+                    <div className="rounded-lg border border-gray-100 bg-gray-50 p-8 sm:p-10 text-center">
                         <h2 className="text-lg font-semibold text-gray-900">
-                            Built with SOLID principles
+                            Stop chasing payments in spreadsheets.
                         </h2>
-                        <p className="mt-3 max-w-2xl text-sm leading-relaxed text-gray-500">
-                            Repository pattern, service layer, action classes, DTOs,
-                            and interface-driven dependency injection. The codebase
-                            is structured so each class has one reason to change and
-                            implementations can be swapped without touching consumers.
+                        <p className="mt-3 mx-auto max-w-lg text-sm leading-relaxed text-gray-500">
+                            Set up your account in under a minute. Create your first
+                            invoice today and know exactly where your money stands.
                         </p>
-                        <div className="mt-6 flex flex-wrap gap-2">
-                            {[
-                                'Laravel 11',
-                                'React',
-                                'Inertia.js',
-                                'PostgreSQL',
-                                'Tailwind CSS',
-                                'Docker',
-                            ].map((tag) => (
-                                <span
-                                    key={tag}
-                                    className="rounded-md border border-gray-200 bg-white px-3 py-1 text-xs font-medium text-gray-600"
+                        {!auth.user && (
+                            <div className="mt-6">
+                                <Link
+                                    href={route('register')}
+                                    className="inline-block rounded-md bg-indigo-600 px-5 py-2.5 text-sm font-medium text-white hover:bg-indigo-700 transition-colors"
                                 >
-                                    {tag}
-                                </span>
-                            ))}
-                        </div>
+                                    Get started for free
+                                </Link>
+                            </div>
+                        )}
                     </div>
                 </section>
 
