@@ -23,7 +23,7 @@ export default function Register() {
 
     return (
         <GuestLayout>
-            <Head title="Register" />
+            <Head title="Create your account" />
 
             <form onSubmit={submit}>
                 <div>
@@ -102,17 +102,20 @@ export default function Register() {
                     />
                 </div>
 
-                <div className="mt-4 flex items-center justify-end">
+                <div className="mt-6">
+                    <PrimaryButton className="w-full justify-center" disabled={processing}>
+                        Create account
+                    </PrimaryButton>
+                </div>
+
+                <div className="mt-4 text-center">
+                    <span className="text-sm text-gray-600 dark:text-gray-400">Already have an account? </span>
                     <Link
                         href={route('login')}
-                        className="rounded-md text-sm text-gray-600 underline hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                        className="text-sm font-medium text-indigo-600 hover:text-indigo-500 dark:text-indigo-400 dark:hover:text-indigo-300"
                     >
-                        Already registered?
+                        Sign in
                     </Link>
-
-                    <PrimaryButton className="ms-4" disabled={processing}>
-                        Register
-                    </PrimaryButton>
                 </div>
             </form>
         </GuestLayout>
