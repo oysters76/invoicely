@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="https://img.shields.io/badge/%F0%9F%93%84-Invoicely-4f46e5?style=for-the-badge&labelColor=eef2ff" alt="Invoicely" height="48">
-</p>
-
 <h1 align="center">Invoicely</h1>
 
 <p align="center">
