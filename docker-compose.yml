@@ -40,9 +40,13 @@ services:
     working_dir: /var/www
     volumes:
       - .:/var/www
+      - node_modules:/var/www/node_modules
     command: sh -c "npm install --legacy-peer-deps && npm run dev -- --host 0.0.0.0"
     ports:
       - "5173:5173"
+    environment:
+      - NODE_OPTIONS=--max-old-space-size=512
+    restart: unless-stopped
     networks:
       - invoice_network
 
@@ -62,6 +66,7 @@ services:
 
 volumes:
   pgdata:
+  node_modules:
 
 networks:
   invoice_network:
