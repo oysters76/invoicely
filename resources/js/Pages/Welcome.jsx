@@ -1,78 +1,12 @@
 import { Head, Link } from '@inertiajs/react';
 import { useState, useEffect } from 'react';
-
-function SunIcon({ className }) {
-    return (
-        <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-            <circle cx="12" cy="12" r="5" />
-            <line x1="12" y1="1" x2="12" y2="3" />
-            <line x1="12" y1="21" x2="12" y2="23" />
-            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
-            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
-            <line x1="1" y1="12" x2="3" y2="12" />
-            <line x1="21" y1="12" x2="23" y2="12" />
-            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
-            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
-        </svg>
-    );
-}
-
-function MoonIcon({ className }) {
-    return (
-        <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" />
-        </svg>
-    );
-}
-
-function GithubIcon({ className }) {
-    return (
-        <svg className={className} viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12Z" />
-        </svg>
-    );
-}
-
-function FileTextIcon({ className }) {
-    return (
-        <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z" />
-            <polyline points="14 2 14 8 20 8" />
-            <line x1="16" y1="13" x2="8" y2="13" />
-            <line x1="16" y1="17" x2="8" y2="17" />
-            <polyline points="10 9 9 9 8 9" />
-        </svg>
-    );
-}
-
-function ShieldIcon({ className }) {
-    return (
-        <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" />
-            <polyline points="9 12 11 14 15 10" />
-        </svg>
-    );
-}
-
-function DownloadIcon({ className }) {
-    return (
-        <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-            <polyline points="7 10 12 15 17 10" />
-            <line x1="12" y1="15" x2="12" y2="3" />
-        </svg>
-    );
-}
-
-function LayersIcon({ className }) {
-    return (
-        <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-            <polygon points="12 2 2 7 12 12 22 7 12 2" />
-            <polyline points="2 17 12 22 22 17" />
-            <polyline points="2 12 12 17 22 12" />
-        </svg>
-    );
-}
+import SunIcon from '@/Components/Icons/SunIcon';
+import MoonIcon from '@/Components/Icons/MoonIcon';
+import GithubIcon from '@/Components/Icons/GithubIcon';
+import FileTextIcon from '@/Components/Icons/FileTextIcon';
+import ShieldIcon from '@/Components/Icons/ShieldIcon';
+import DownloadIcon from '@/Components/Icons/DownloadIcon';
+import LayersIcon from '@/Components/Icons/LayersIcon';
 
 export default function Welcome({ auth }) {
     const [dark, setDark] = useState(false);
@@ -107,6 +41,13 @@ export default function Welcome({ auth }) {
                             </span>
                         </div>
                         <div className="flex items-center gap-5">
+                            <button
+                                onClick={toggleTheme}
+                                className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
+                                aria-label="Toggle theme"
+                            >
+                                {dark ? <SunIcon className="h-5 w-5" /> : <MoonIcon className="h-5 w-5" />}
+                            </button>
                             <a
                                 href="https://github.com"
                                 target="_blank"
@@ -116,13 +57,6 @@ export default function Welcome({ auth }) {
                             >
                                 <GithubIcon className="h-5 w-5" />
                             </a>
-                            <button
-                                onClick={toggleTheme}
-                                className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
-                                aria-label="Toggle theme"
-                            >
-                                {dark ? <SunIcon className="h-5 w-5" /> : <MoonIcon className="h-5 w-5" />}
-                            </button>
                             {auth.user ? (
                                 <Link
                                     href={route('dashboard')}
